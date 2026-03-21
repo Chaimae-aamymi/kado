@@ -7,7 +7,7 @@
 ###  Fonctionnalités Clés
 
 - **Génération IA Personnalisée** : Basée sur l'âge, le sexe, les centres d'intérêt et le budget.
-- **Support Multilingue** : Disponible en Français, Anglais et Arabe.
+- **Support Multilingue** : Disponible en Français, Anglais et Arabe..
 - **Système d'Authentification** : Créez un compte pour sauvegarder vos idées favorites.
 - **Dashboard Favoris** : Retrouvez facilement toutes les meilleures idées que vous avez générées.
 - **Interface Premium** : Design responsive avec mode sombre (Dark) et clair (Light).
