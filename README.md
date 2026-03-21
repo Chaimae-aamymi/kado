@@ -1,16 +1,26 @@
-# 🎁 Gemini Gift AI – Le Générateur de Cadeaux Intelligent
+# 🎁 Kado – Le Générateur de Cadeaux Intelligent
 
-**Gemini Gift AI** est une application web moderne qui utilise l'intelligence artificielle (Google Gemini 1.5 Flash) pour vous aider à trouver le cadeau parfait en quelques secondes. Que ce soit pour un anniversaire, une fête ou un plaisir d'offrir, notre IA analyse le profil du destinataire pour proposer 5 idées sur-mesure.
+**Kado** est une application web moderne qui utilise l'intelligence artificielle (Google Gemini 1.5 Flash) pour vous aider à trouver le cadeau parfait en quelques secondes. Que ce soit pour un anniversaire, une fête ou un plaisir d'offrir, notre IA analyse le profil du destinataire pour proposer 5 idées sur-mesure.
 
 ---
 
-### 🚀 Fonctionnalités Clés / Key Features
+### 🚀 Fonctionnalités Clés
 
-- **Génération IA Personnalisée** : Basée sur l'âge, le sexe, les centres d'intérêt et le budget. (AI-Powered Recommendations)
-- **Support Multilingue** : Disponible en Français, Anglais et Arabe. (Multilingual Support: FR, EN, AR)
-- **Système d'Authentification** : Créez un compte pour sauvegarder vos idées favorites. (User Auth & Profile)
-- **Dashboard Favoris** : Retrouvez facilement toutes les meilleures idées que vous avez générées. (Favorites Management)
-- **Interface Premium** : Design responsive avec mode sombre (Dark) et clair (Light). (Sleek Dark/Light Mode UI)
+- **Génération IA Personnalisée** : Basée sur l'âge, le sexe, les centres d'intérêt et le budget.
+- **Support Multilingue** : Disponible en Français, Anglais et Arabe.
+- **Système d'Authentification** : Créez un compte pour sauvegarder vos idées favorites.
+- **Dashboard Favoris** : Retrouvez facilement toutes les meilleures idées que vous avez générées.
+- **Interface Premium** : Design responsive avec mode sombre (Dark) et clair (Light).
+
+---
+
+### 🚀 Key Features (English)
+
+- **AI-Powered Recommendations**: Real-time generation based on age, gender, interests, and budget.
+- **Multilingual Support**: Fully localized in French, English, and Arabic.
+- **User Authentication**: Secure login/registration system to personalize your experience.
+- **Favorites System**: Save and manage your favorite gift ideas for later.
+- **Premium UI**: Sleek, responsive design featuring both Dark and Light modes.
 
 ---
 
@@ -19,7 +29,7 @@
 - **Backend** : Flask (Python 3.x)
 - **IA** : Google Gemini API (Modèle `gemini-flash-latest`)
 - **Base de données** : SQLite (persistance locale)
-- **Frontend** : HTML5, CSS3 (Vanilla design, glassmorphism vibes)
+- **Frontend** : HTML5, CSS3 (Modern design, glassmorphism)
 
 ---
 
@@ -52,4 +62,4 @@
 ---
 
 ### ⚖️ Licence
-Ce projet est sous licence MIT. Libre à vous de l'utiliser et de le modifier !
+Ce projet est sous licence MIT.
