@@ -1,10 +1,10 @@
-# 🎁 Kado – Le Générateur de Cadeaux Intelligent
+#  Kado – Le Générateur de Cadeaux Intelligent
 
 **Kado** est une application web moderne qui utilise l'intelligence artificielle (Google Gemini 1.5 Flash) pour vous aider à trouver le cadeau parfait en quelques secondes. Que ce soit pour un anniversaire, une fête ou un plaisir d'offrir, notre IA analyse le profil du destinataire pour proposer 5 idées sur-mesure.
 
 ---
 
-### 🚀 Fonctionnalités Clés
+###  Fonctionnalités Clés
 
 - **Génération IA Personnalisée** : Basée sur l'âge, le sexe, les centres d'intérêt et le budget.
 - **Support Multilingue** : Disponible en Français, Anglais et Arabe.
@@ -14,7 +14,7 @@
 
 ---
 
-### 🚀 Key Features (English)
+###  Key Features (English)
 
 - **AI-Powered Recommendations**: Real-time generation based on age, gender, interests, and budget.
 - **Multilingual Support**: Fully localized in French, English, and Arabic.
@@ -24,7 +24,7 @@
 
 ---
 
-### 🛠️ Technologies / Stack
+###  Technologies / Stack
 
 - **Backend** : Flask (Python 3.x)
 - **IA** : Google Gemini API (Modèle `gemini-flash-latest`)
@@ -33,7 +33,7 @@
 
 ---
 
-### 📦 Installation & Setup
+###  Installation & Setup
 
 1. **Cloner le projet :**
    ```bash
@@ -61,5 +61,5 @@
 
 ---
 
-### ⚖️ Licence
+###  Licence
 Ce projet est sous licence MIT.

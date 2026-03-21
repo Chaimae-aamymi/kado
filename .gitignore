@@ -1,6 +1,19 @@
+# Environnement
 .env
+
+# Python cache
 __pycache__/
 *.pyc
+*.pyo
+
+# Base de données locale
 database.db
+*.db
+
+# Logs
 startup_log.txt
-models.json
+*.log
+
+# Fichiers temporaires / OS
+.DS_Store
+Thumbs.db
