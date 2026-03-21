@@ -1,0 +1,4 @@
+d# Tell GitHub Linguist to not count HTML templates as the main language
+templates/*.html linguist-detectable=false
+*.html linguist-detectable=false
+*.css linguist-detectable=false
