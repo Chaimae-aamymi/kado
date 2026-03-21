@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="{{ lang }}" dir="{{ t.dir }}" data-theme="{{ theme }}">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kado — Vos Favoris</title>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+    <div class="bg-orbs">
+        <div class="orb orb-1"></div>
+        <div class="orb orb-2"></div>
+    </div>
+
+    <div class="container">
+        <header class="header">
+            <a href="/" class="logo-link">
+                <div class="logo">
+                    <div class="logo-badge">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="logo-svg" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <polyline points="20 12 20 22 4 22 4 12" />
+                            <rect x="2" y="7" width="20" height="5" />
+                            <line x1="12" y1="22" x2="12" y2="7" />
+                            <path d="M12 7H7.5a2.5 2.5 0 0 1 0-5C11 2 12 7 12 7z" />
+                            <path d="M12 7h4.5a2.5 2.5 0 0 0 0-5C13 2 12 7 12 7z" />
+                        </svg>
+                    </div>
+                </div>
+            </a>
+            <h1>Vos Cadeaux Favoris</h1>
+            <p>Retrouvez ici toutes vos idées enregistrées </p>
+        </header>
+
+        {% if not gifts %}
+        <div class="empty-favorites">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path
+                    d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
+            </svg>
+            <p>Vous n'avez pas encore de favoris.</p>
+            <a href="/" class="btn-submit">Trouver des idées</a>
+        </div>
+        {% else %}
+        <div class="cards-grid">
+            {% for gift in gifts %}
+            <article class="gift-card gift-card--{{ gift.color }}">
+                <div class="gift-rank">{{ loop.index }}</div>
+
+                <div class="gift-image-container">
+                    <img src="{{ gift.image_url }}" alt="{{ gift.nom }}" class="gift-image" loading="lazy">
+                    <div class="gift-image-overlay"></div>
+                </div>
+
+                <div class="gift-body">
+                    <h2 class="gift-name">{{ gift.nom }}</h2>
+                    <p class="gift-reason">{{ gift.raison }}</p>
+                    <div class="gift-meta">
+                        <span class="gift-tag gift-tag--{{ gift.color }}">
+                            {{ gift.categorie }}
+                        </span>
+                        <span class="gift-link-label">
+                            {{ gift.lien_logique }}
+                        </span>
+                    </div>
+                </div>
+
+                <div class="gift-actions">
+                    <button class="btn-fav-toggle active" 
+                            data-gift='{{ gift | tojson }}'
+                            onclick="toggleFavorite(this)">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" stroke="none">
+                            <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
+                        </svg>
+                    </button>
+                    <div class="gift-price-wrap">
+                        <div class="gift-price">{{ gift.prix_min }} – {{ gift.prix_max }}</div>
+                    </div>
+                </div>
+            </article>
+            {% endfor %}
+        </div>
+        {% endif %}
+
+        <div class="favorites-back">
+            <a href="/" class="btn-back">Retour à l'accueil</a>
+        </div>
+    </div>
+
+    <script>
+    async function toggleFavorite(btn) {
+        const gift = JSON.parse(btn.getAttribute('data-gift'));
+        const name = gift.nom;
+
+        const res = await fetch('/toggle-favorite', {
+            method: 'POST',
+            headers: {'Content-Type': 'application/json'},
+            body: JSON.stringify({gift_name: name, gift_data: gift})
+        });
+        const result = await res.json();
+        if (result.success) {
+            if (result.action === 'removed') {
+                btn.classList.toggle('active', false);
+                // Optionally remove from view if on favorites page
+                btn.closest('.gift-card').style.opacity = '0.5';
+                btn.closest('.gift-card').style.pointerEvents = 'none';
+            } else {
+                btn.classList.toggle('active', true);
+            }
+        }
+    }
+    </script>
+</body>
+</html>
