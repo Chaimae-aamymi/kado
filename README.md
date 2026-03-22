@@ -2,7 +2,6 @@
 
 **Kado** est une application web moderne qui utilise l'intelligence artificielle (Google Gemini 1.5 Flash) pour vous aider à trouver le cadeau parfait en quelques secondes. Que ce soit pour un anniversaire, une fête ou un plaisir d'offrir, notre IA analyse le profil du destinataire pour proposer 5 idées sur-mesure.
 
----
 
 ###  Fonctionnalités Clés
 
@@ -12,7 +11,6 @@
 - **Dashboard Favoris** : Retrouvez facilement toutes les meilleures idées que vous avez générées.
 - **Interface Premium** : Design responsive avec mode sombre (Dark) et clair (Light).
 
----
 
 ###  Key Features (English)
 
@@ -22,7 +20,6 @@
 - **Favorites System**: Save and manage your favorite gift ideas for later.
 - **Premium UI**: Sleek, responsive design featuring both Dark and Light modes.
 
----
 
 ###  Technologies / Stack
 
@@ -31,7 +28,6 @@
 - **Base de données** : SQLite (persistance locale)
 - **Frontend** : HTML5, CSS3 (Modern design, glassmorphism)
 
----
 
 ###  Installation & Setup
 
@@ -59,7 +55,6 @@
    ```
    L'application sera disponible sur `http://localhost:3000`.
 
----
 
 ###  Licence
 Ce projet est sous licence MIT.
