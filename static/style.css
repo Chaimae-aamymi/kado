@@ -1387,15 +1387,23 @@ input:focus {
 }
 
 /* ── Light Mode Fixes ── */
+[data-theme="light"] .form-card,
+[data-theme="light"] .gift-card,
+[data-theme="light"] .api-setup-card,
+[data-theme="light"] .auth-card {
+    border: 1.5px solid #0d0d1a;
+}
+
 [data-theme="light"] .user-menu,
 [data-theme="light"] .lang-switcher,
 [data-theme="light"] .theme-switcher {
     background: rgba(255, 255, 255, 0.9);
-    border-color: rgba(100, 80, 200, 0.15);
+    border: 1.5px solid #0d0d1a;
 }
 
 [data-theme="light"] .btn-fav-toggle {
     background: #fff;
+    border: 1.5px solid #0d0d1a;
     box-shadow: 0 4px 12px rgba(100, 80, 200, 0.08);
 }
 
@@ -1497,4 +1505,82 @@ input:focus {
         padding: 8px 14px;
         font-size: 0.8rem;
     }
+}
+/* ── Funny Background Emojis ── */
+.bg-emojis {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 0;
+    overflow: hidden;
+    display: none; /* hidden in dark mode */
+}
+
+[data-theme="light"] .bg-emojis {
+    display: block; /* visible in light mode */
+}
+
+/* Hide orbs in light mode to highlight emojis */
+[data-theme="light"] .bg-orbs {
+    opacity: 0.3;
+}
+
+.bg-emoji {
+    position: absolute;
+    font-size: 3.5rem;
+    animation: floatEmoji 15s linear infinite;
+    top: 100vh;
+}
+
+.e-1 { left: 10%; animation-duration: 22s; animation-delay: 0s; font-size: 4.5rem; }
+.e-2 { left: 30%; animation-duration: 18s; animation-delay: 4s; font-size: 3rem; }
+.e-3 { left: 55%; animation-duration: 25s; animation-delay: 2s; font-size: 5rem; }
+.e-4 { left: 75%; animation-duration: 19s; animation-delay: 6s; font-size: 3.5rem; }
+.e-5 { left: 90%; animation-duration: 21s; animation-delay: 1s; font-size: 4rem; }
+
+@keyframes floatEmoji {
+    0% { transform: translateY(0vh) rotate(0deg); opacity: 0; }
+    10% { opacity: 0.9; }
+    90% { opacity: 0.9; }
+    100% { transform: translateY(-120vh) rotate(360deg); opacity: 0; }
+}
+
+/* ── "Funny" Bouncy Design Overrides ── */
+.form-card {
+    border-radius: 35px !important;
+    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.4s !important;
+}
+
+.form-card:hover {
+    transform: translateY(-8px) rotate(1deg) !important;
+    box-shadow: 0 15px 40px rgba(168, 85, 247, 0.2) !important;
+}
+
+.gift-card {
+    border-radius: 25px !important;
+    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.4s !important;
+}
+
+.gift-card:hover {
+    transform: translateY(-10px) rotate(-1.5deg) scale(1.03) !important;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.1) !important;
+}
+
+.btn-submit, .btn-retry {
+    border-radius: 40px !important;
+    padding: 20px !important;
+    font-size: 1.15rem !important;
+    transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.3s !important;
+}
+
+.btn-submit:hover, .btn-retry:hover {
+    transform: translateY(-4px) scale(1.02) !important;
+}
+
+input[type="text"], input[type="number"], input[type="password"], select {
+    border-radius: 20px !important;
+}
+
+.tag {
+    border-radius: 25px !important;
 }
