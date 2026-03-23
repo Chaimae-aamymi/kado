@@ -32,8 +32,8 @@
 
 /* ── CSS Variables (Light) ── */
 [data-theme="light"] {
-    --bg: #fff5ed;
-    --bg-secondary: #ffefdb;
+    --bg: #f8f7ff;
+    --bg-secondary: #f0eeff;
     --surface: rgba(255, 255, 255, 0.7);
     --surface-hover: rgba(255, 255, 255, 0.9);
     --border: rgba(148, 163, 184, 0.2);
@@ -1513,11 +1513,11 @@ input:focus {
     pointer-events: none;
     z-index: 0;
     overflow: hidden;
-    display: none; /* hidden in dark mode */
+    display: none; /* hidden by default */
 }
 
 [data-theme="light"] .bg-emojis {
-    display: block; /* visible in light mode */
+    display: block; /* visible only in light mode */
 }
 
 /* Hide orbs in light mode to highlight emojis */
@@ -1529,22 +1529,23 @@ input:focus {
     width: 100%;
     height: 100%;
     object-fit: contain;
-    filter: drop-shadow(0 4px 8px rgba(0,0,0,0.1));
+    filter: drop-shadow(0 15px 25px rgba(0,0,0,0.15));
 }
 
 .bg-emoji {
     position: absolute;
-    width: 5rem;
-    height: 5rem;
     animation: floatEmoji 15s linear infinite;
     top: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-.e-1 { left: 10%; animation-duration: 22s; animation-delay: 0s; font-size: 4.5rem; }
-.e-2 { left: 30%; animation-duration: 18s; animation-delay: 4s; font-size: 3rem; }
-.e-3 { left: 55%; animation-duration: 25s; animation-delay: 2s; font-size: 5rem; }
-.e-4 { left: 75%; animation-duration: 19s; animation-delay: 6s; font-size: 3.5rem; }
-.e-5 { left: 90%; animation-duration: 21s; animation-delay: 1s; font-size: 4rem; }
+.e-1 { left: 10%; width: 9rem; height: 9rem; animation-duration: 22s; animation-delay: 0s; filter: blur(1px); opacity: 0.6; }
+.e-2 { left: 30%; width: 5rem; height: 5rem; animation-duration: 18s; animation-delay: 4s; opacity: 1; }
+.e-3 { left: 55%; width: 11rem; height: 11rem; animation-duration: 25s; animation-delay: 2s; filter: blur(2px); opacity: 0.5; }
+.e-4 { left: 75%; width: 7rem; height: 7rem; animation-duration: 19s; animation-delay: 6s; opacity: 1; }
+.e-5 { left: 90%; width: 6rem; height: 6rem; animation-duration: 21s; animation-delay: 1s; opacity: 0.9; }
 
 @keyframes floatEmoji {
     0% { transform: translateY(0vh) rotate(0deg); opacity: 0; }
