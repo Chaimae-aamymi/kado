@@ -2,7 +2,7 @@ import sqlite3
 import os
 from werkzeug.security import generate_password_hash, check_password_hash
 
-DB_PATH = "database.db"
+DB_PATH = os.environ.get("DATABASE_URL", "database.db")
 
 def get_db_connection():
     conn = sqlite3.connect(DB_PATH)

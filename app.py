@@ -254,6 +254,9 @@ def set_theme(theme):
 
 @app.route("/", methods=["GET"])
 def index():
+    if not is_logged_in():
+        return redirect(url_for("register"))
+    
     ctx = base_context()
     # Read from session for state persistence
     return render_template("index.html", errors={}, api_error=None,
